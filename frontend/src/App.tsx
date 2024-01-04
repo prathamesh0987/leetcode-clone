@@ -6,6 +6,8 @@ import { getAuth,onAuthStateChanged } from 'firebase/auth';
 import { useEffect } from 'react';
 import { RecoilRoot, useRecoilState, useResetRecoilState, useSetRecoilState } from 'recoil';
 import { userAtom } from './store/atoms/user';
+import { Topbar } from './components/Topbar';
+import { Card } from './components/Card';
 
 
 const firebaseConfig = {
@@ -61,9 +63,12 @@ function StoreApp(){
     return <div><Signin/></div>
   }
   return (
-    <>
-      You are logged in as {user.user.email}
-    </>
+    <div className="place-items-center grid">
+       <div className="max-w-screen-lg w-full ">
+     <Topbar/>
+     <Card>Hi there</Card>
+    </div>
+    </div>
   )
 
 }
